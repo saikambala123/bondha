@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "ApplyPilot — AI Job Application Autofill",
+  "version": "1.0.0",
+  "description": "AI autofill for Workday, Greenhouse, Lever, Ashby, Taleo, iCIMS & any ATS form. Parses your resume with Gemini, fills forms, and auto-detects errors before you submit.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ApplyPilot — AI Autofill",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

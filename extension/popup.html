@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ApplyPilot</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="head">
+      <div class="brand">
+        <span class="logo">⚡</span>
+        <div>
+          <h1>Apply<span>Pilot</span></h1>
+          <p id="statusLine" class="status">Checking connection…</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Connection card -->
+      <section class="card" id="connectCard">
+        <h2>Connect to your portal</h2>
+        <label for="portalUrl">Portal URL</label>
+        <input id="portalUrl" type="url" placeholder="https://your-app.vercel.app" spellcheck="false" />
+        <label for="apiKey">API key</label>
+        <input id="apiKey" type="password" placeholder="ap_live_…" spellcheck="false" autocomplete="off" />
+        <div class="row">
+          <button id="saveBtn" class="btn ghost">Save</button>
+          <button id="connectBtn" class="btn primary">Connect</button>
+        </div>
+        <p id="connectError" class="error hidden"></p>
+      </section>
+
+      <!-- Connected panel -->
+      <section class="card hidden" id="readyCard">
+        <div class="profile-row">
+          <div>
+            <p class="muted small">Profile</p>
+            <p id="profileName" class="strong">—</p>
+          </div>
+          <div class="right">
+            <p class="muted small">AI engine</p>
+            <p id="aiProvider" class="strong">—</p>
+          </div>
+        </div>
+        <button id="fillBtn" class="btn primary block">⚡ Autofill this page</button>
+        <p class="hint">
+          The ApplyPilot button also appears on pages that look like a job application form.
+        </p>
+        <div id="lastSession" class="last-session hidden"></div>
+        <a id="dashboardLink" class="dash-link" href="#" target="_blank" rel="noreferrer">Open portal dashboard ↗</a>
+      </section>
+
+      <!-- Help -->
+      <section class="card muted-card">
+        <p class="small">
+          <b>Works with:</b> Workday · Greenhouse · Lever · Ashby · SmartRecruiters · Taleo · iCIMS ·
+          SuccessFactors · BambooHR · LinkedIn · Indeed · any HTML application form.
+        </p>
+      </section>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

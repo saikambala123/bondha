@@ -1,0 +1,37 @@
+ALEX MORGAN
+Software Engineer
+San Francisco, CA | alex.morgan.dev@gmail.com | +1 (415) 555-0134
+LinkedIn: linkedin.com/in/alexmorgan-dev | GitHub: github.com/alexmorgan | Portfolio: alexmorgan.dev
+
+SUMMARY
+Full-stack software engineer with 6 years of experience building scalable web applications
+and developer tools. Specialized in TypeScript, React, and Node.js with production
+experience at high-growth startups. Passionate about developer experience and clean APIs.
+
+EXPERIENCE
+Senior Software Engineer, Stripe Inc., San Francisco, CA — Mar 2022 to Present
+- Led the payments dashboard team, shipping features used by 2M+ businesses monthly
+- Reduced dashboard p95 latency by 38% through edge caching and query optimization
+- Mentored 5 engineers and ran the frontend guild
+
+Software Engineer, Notion Labs, San Francisco, CA — Jul 2019 to Feb 2022
+- Built real-time collaborative editing features with CRDTs
+- Created the public API platform adopted by 40k+ integrations
+
+Junior Developer, TechStart Inc., Austin, TX — Jun 2018 to Jun 2019
+- Built internal CRM tooling with React and Django
+
+EDUCATION
+B.S. Computer Science, University of Texas at Austin, 2014-2018, GPA 3.8
+
+SKILLS
+TypeScript, JavaScript, React, Next.js, Node.js, Python, PostgreSQL, MongoDB, GraphQL,
+Docker, Kubernetes, AWS, CI/CD, Jest, Playwright
+
+CERTIFICATIONS
+AWS Solutions Architect Associate, Google Cloud Professional Developer
+
+LANGUAGES
+English (native), Spanish (conversational)
+
+WORK AUTHORIZATION: US Citizen
