@@ -1,155 +1,81 @@
-@import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
-
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.155 0.005 250);
-  --foreground: oklch(0.97 0.005 250);
-  --card: oklch(0.19 0.006 250);
-  --card-foreground: oklch(0.97 0.005 250);
-  --popover: oklch(0.21 0.006 250);
-  --popover-foreground: oklch(0.97 0.005 250);
-  --primary: oklch(0.76 0.16 163);
-  --primary-foreground: oklch(0.15 0.02 165);
-  --secondary: oklch(0.26 0.007 250);
-  --secondary-foreground: oklch(0.97 0.005 250);
-  --muted: oklch(0.26 0.007 250);
-  --muted-foreground: oklch(0.70 0.01 250);
-  --accent: oklch(0.26 0.01 250);
-  --accent-foreground: oklch(0.97 0.005 250);
-  --destructive: oklch(0.68 0.19 22);
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 13%);
-  --ring: oklch(0.76 0.16 163);
-  --chart-1: oklch(0.76 0.16 163);
-  --chart-2: oklch(0.78 0.14 85);
-  --chart-3: oklch(0.68 0.19 22);
-  --chart-4: oklch(0.70 0.12 290);
-  --chart-5: oklch(0.72 0.13 200);
-  --sidebar: oklch(0.19 0.006 250);
-  --sidebar-foreground: oklch(0.97 0.005 250);
-  --sidebar-primary: oklch(0.76 0.16 163);
-  --sidebar-primary-foreground: oklch(0.15 0.02 165);
-  --sidebar-accent: oklch(0.26 0.01 250);
-  --sidebar-accent-foreground: oklch(0.97 0.005 250);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.76 0.16 163);
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  :root {
+    --font-display: "Bricolage Grotesque";
+    --font-body: "Inter";
+    --font-mono: "JetBrains Mono";
   }
+  * { border-color: theme("colors.line"); }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-canvas text-ink font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+  ::selection { background: theme("colors.brand.200"); color: theme("colors.brand.900"); }
+  :focus-visible { outline: 2px solid theme("colors.brand.500"); outline-offset: 2px; border-radius: 6px; }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-[1180px] px-5 sm:px-8; }
+
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[.18em] text-brand-500;
+  }
+
+  .card { @apply rounded-2xl border border-line bg-white shadow-card; }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold
+           transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-primary { @apply btn bg-brand-500 text-white hover:bg-brand-600 active:scale-[.985] shadow-[0_10px_24px_-12px_rgba(91,42,214,.9)]; }
+  .btn-ghost   { @apply btn border border-line bg-white text-ink hover:border-brand-200 hover:bg-brand-50; }
+  .btn-dark    { @apply btn bg-brand-900 text-white hover:bg-brand-800; }
+  .btn-danger  { @apply btn border border-danger-500/30 bg-white text-danger-500 hover:bg-danger-500/5; }
+  .btn-sm      { @apply px-3 py-1.5 text-[13px] rounded-lg; }
+
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-sm text-ink
+           placeholder:text-ink-faint transition focus:border-brand-300 focus:ring-4 focus:ring-brand-500/10 focus:outline-none;
+  }
+  .label { @apply mb-1.5 block text-[13px] font-medium text-ink-soft; }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-white px-2.5 py-1
+           font-mono text-[11px] uppercase tracking-wider text-ink-soft;
+  }
+
+  /* Signature: the "wire" that connects a profile field to a form field */
+  .wire { stroke-dasharray: 4 5; animation: dashmove 1.1s linear infinite; }
+  @keyframes dashmove { to { stroke-dashoffset: -18; } }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
   }
 }
 
-/* ApplyPilot — ambient background glow + custom scrollbars */
-.ap-glow {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(600px 320px at 15% -5%, oklch(0.76 0.16 163 / 0.10), transparent 70%),
-    radial-gradient(500px 300px at 85% 0%, oklch(0.72 0.13 200 / 0.07), transparent 70%);
-}
+/* thin scrollbars inside dashboard panes */
+.scroll-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: #D8DCE5; border-radius: 99px; }
+.scroll-thin::-webkit-scrollbar-track { background: transparent; }
 
-.ap-scroll::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-.ap-scroll::-webkit-scrollbar-track {
-  background: transparent;
-}
-.ap-scroll::-webkit-scrollbar-thumb {
-  background: oklch(1 0 0 / 12%);
-  border-radius: 999px;
-}
-.ap-scroll::-webkit-scrollbar-thumb:hover {
-  background: oklch(1 0 0 / 20%);
-}
-
-.ap-grid-bg {
-  background-image:
-    linear-gradient(oklch(1 0 0 / 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, oklch(1 0 0 / 0.025) 1px, transparent 1px);
-  background-size: 44px 44px;
-}
+/* Long-form prose for /privacy and /terms. Plain readable text, matched to the
+   marketing pages' type scale rather than pulling in a typography plugin.
+   Uses @apply so the token names stay in one place (tailwind.config.ts). */
+.legal { @apply text-[15px] leading-[1.72] text-ink-soft; }
+.legal > * + * { @apply mt-4; }
+.legal h2 { @apply mt-9 font-display text-[19px] font-bold tracking-[-.014em] text-ink; }
+.legal ul { @apply list-disc pl-[1.15rem]; }
+.legal ul > li + li { @apply mt-[.45rem]; }
+.legal li::marker { @apply text-ink-faint; }
+.legal b { @apply font-semibold text-ink; }
+.legal a { @apply text-brand-600 underline underline-offset-2 hover:text-brand-500; }
+.legal code { @apply rounded bg-canvas px-1 py-0.5 font-mono text-[12.5px] text-ink; }

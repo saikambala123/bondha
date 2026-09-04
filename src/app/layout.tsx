@@ -1,47 +1,47 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
 export const metadata: Metadata = {
-  title: "ApplyPilot — AI Job Application Autofill",
-  description:
-    "AI-powered web portal + Chrome extension that auto-fills job applications on Workday, Greenhouse, Lever and 20+ ATS platforms. Parses your resume with Gemini, detects and fixes form errors automatically.",
-  keywords: ["AI autofill", "job applications", "Workday", "Greenhouse", "Gemini", "resume parser", "Chrome extension"],
-  icons: {
-    icon: "/extension/icons/icon128.png",
+  metadataBase: new URL(APP_URL),
+  title: {
+    default: "Zapply — Autofill job applications in one click",
+    template: "%s · Zapply",
   },
+  description:
+    "Zapply fills out job applications for you, remembers your answers, and keeps every application you've sent in one tracker.",
+  applicationName: "Zapply",
+  keywords: ["job application autofill", "Workday autofill", "Greenhouse autofill", "job tracker", "ATS"],
+  openGraph: {
+    title: "Zapply — Autofill job applications in one click",
+    description:
+      "Fill any job application in one click, reuse your answers everywhere, and track every application automatically.",
+    url: APP_URL,
+    siteName: "Zapply",
+    type: "website",
+  },
+  twitter: { card: "summary_large_image", title: "Zapply", description: "Autofill job applications in one click." },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0f0d",
+  themeColor: "#5B2AD6",
   width: "device-width",
   initialScale: 1,
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground min-h-screen flex flex-col`}
-      >
-        {children}
-        <Toaster theme="dark" position="top-right" richColors closeButton />
-      </body>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
